@@ -1,6 +1,7 @@
 from dataclasses import dataclass
-import os
 from environs import Env
+from dotenv import load_dotenv
+
 
 @dataclass
 class TgBot:
@@ -16,9 +17,5 @@ def load_config(path: str | None = None) -> Config:
     env.read_env(path)
     return Config(tg_bot=TgBot(token=env("BOT_TOKEN")))
 
-# Определение переменных окружения после вызова функции load_config
-ip = os.getenv('ip')
-PGUSER = str(os.getenv('PGUSER'))
-PGPASSWORD = str(os.getenv('PGPASSWORD'))
-DATABASE = str(os.getenv('DATABASE'))
-POSTGRES_URI = f'postgresql://{PGUSER}:{PGPASSWORD}@{ip}/{DATABASE}'
+# Загрузите переменные окружения из файла .env
+load_dotenv()
