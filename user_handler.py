@@ -6,11 +6,11 @@ from keyboards import sub_kd
 from aiogram import Router, types, F
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
-from model import RedisRateHandler
+from models import RedisRateHandler
 from aiogram.fsm.state import default_state
 from aiogram.types import Message
 from aiogram.filters.state import StatesGroup, State, StateFilter
-from model import Currency
+from models import Currency
 
 
 
