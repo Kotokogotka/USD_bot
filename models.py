@@ -9,7 +9,7 @@ class Currency:
         self.code = code
         self.price = price
         self.date = date
-        self.sub = sub
+       # self.sub = sub
 class RedisRateHandler:
     def __init__(self, host: str, port: int, db_num=0):
         self.redis = redis.Redis(host=host, port=port, db=db_num, decode_responses=True)
