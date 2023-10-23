@@ -4,7 +4,7 @@ import re
 
 
 class Currency:
-    def __init__(self, name: str, code: str, price: float, date: datetime, sub: bool):
+    def __init__(self, name: str, code: str, price: float, date: datetime):
         self.name = name
         self.code = code
         self.price = price
