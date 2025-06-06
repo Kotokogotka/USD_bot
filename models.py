@@ -19,16 +19,6 @@ class RedisRateHandler:
         data = f"{currency.name}:{currency.price}:{currency.sub}"
         return self.redis.set(key, data)
 
-   # async def set_user_subscription(self, username: str, is_subscribed: bool) -> None:
-        # Обновляем параметр подписки пользователя в базе данных Redis
-      #  await self.redis.set(username, is_subscribed)
-
-    #async def get_user_subscription(self, user_key: str) -> bool:
-        # Получаем параметр подписки пользователя из базы данных Redis
-    #    subscribed = self.redis.hget(user_key, 'sub')
-        # Если пользователь подписан, возвращаем True, иначе False
-   #     return bool(subscribed) if subscribed else False
-
     async def get_currency(self, code, date):
         # Парсим строку с датой в объект datetime
         user_date = datetime.strptime(date, '%d-%m-%Y')
